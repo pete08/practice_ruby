@@ -39,10 +39,7 @@ class Manager < Employee
     @employees.each do |n|
       n.give_annual_raise
     end          
-    # p @employees[0].give_annual_raise
-    #loop thru each mgr employee and give raise
   end
-
   
   def fire_all_employees
     @employees.each do |n|

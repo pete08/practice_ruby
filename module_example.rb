@@ -1,0 +1,54 @@
+module Vehicle
+  def initialize
+    @speed = 0
+    @direction = 'north'
+  end
+
+  def brake
+    @speed = 0
+  end
+
+  def accelerate
+    @speed += 10
+  end
+
+  def turn(new_direction)
+    @direction = new_direction
+  end
+
+  def info
+    p "Speed: #{@speed}, Direction: #{@direction}"
+  end
+
+end
+
+class Car
+  include Vehicle
+
+  def honk_horn
+    puts "Beeeeeeep!"
+  end
+end
+
+class Bike
+  include Vehicle
+
+  def ring_bell
+    puts "Ring ring!"
+  end
+end
+
+
+bike1 = Bike.new
+car1 = Car.new
+
+
+car1.honk_horn
+car1.accelerate
+car1.turn("east")
+car1.accelerate
+
+bike1.ring_bell
+bike1.info
+bike1.accelerate
+bike1.info
